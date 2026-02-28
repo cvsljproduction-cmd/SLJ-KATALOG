@@ -25,7 +25,7 @@
             </div>
             <div class="flex items-center gap-6 text-sm font-medium text-gray-400">
                 <button onclick="openTab('beranda')" id="btn-beranda" class="nav-link active py-1 hover:text-white transition">BERANDA</button>
-                <button onclick="openTab('galeri')" id="btn-galeri" class="nav-link py-1 hover:text-white transition">KATALOG</button>
+                <button onclick="openTab('galeri')" id="btn-galeri" class="nav-link py-1 hover:text-white transition font-bold">KATALOG</button>
                 <a href="https://wa.me/6285864474322" target="_blank" class="bg-yellow-500 text-black px-4 py-2 rounded-full font-bold text-xs hover:bg-yellow-400 transition shadow-lg">HUBUNGI</a>
             </div>
         </nav>
@@ -35,13 +35,13 @@
 
         <div id="beranda" class="tab-content active py-16">
             <div class="text-center mb-20 max-w-3xl mx-auto">
-                <h2 class="text-6xl font-extrabold mb-6 tracking-tighter text-white">Premium Hardcase Manufacturer</h2>
+                <h2 class="text-6xl font-extrabold mb-6 tracking-tighter text-white uppercase italic">Premium Hardcase</h2>
                 <p class="text-xl text-gray-400 leading-relaxed mb-10">
                     Manufaktur spesialis untuk kebutuhan **Audio & Panggung**. Kami fokus pada perlindungan maksimal, presisi kustomisasi, dan komitmen profesional pada ketepatan waktu.
                 </p>
                 <div class="flex gap-4 justify-center">
-                    <button onclick="openTab('galeri')" class="bg-yellow-500 text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition transform hover:scale-105 shadow-xl">
-                        Lihat Katalog Produk
+                    <button onclick="openTab('galeri')" class="bg-yellow-500 text-black px-12 py-5 rounded-full font-extrabold text-lg hover:bg-yellow-400 transition transform hover:scale-105 shadow-[0_0_30px_rgba(250,204,21,0.4)]">
+                        LIHAT KATALOG PRODUK
                     </button>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 <div>
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-1 bg-yellow-500 rounded-full"></div>
-                        <h3 class="text-3xl font-bold text-white tracking-tight">VISI KAMI</h3>
+                        <h3 class="text-3xl font-bold text-white tracking-tight italic">VISI KAMI</h3>
                     </div>
                     <p class="text-gray-300 leading-relaxed text-lg bg-gray-950/80 p-6 rounded-xl border border-gray-800">
                         Menjadi Perusahaan Pengadaan Hardcase Triplek, Besi, dan Aluminium yang **berkualitas, unggul, dan terpercaya** di Indonesia.
@@ -59,25 +59,29 @@
                 <div>
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-1 bg-yellow-500 rounded-full"></div>
-                        <h3 class="text-3xl font-bold text-white tracking-tight">MISI KAMI</h3>
+                        <h3 class="text-3xl font-bold text-white tracking-tight italic">MISI KAMI</h3>
                     </div>
                     <ul class="text-gray-400 space-y-4 text-base">
                         <li class="flex gap-3 items-start"><span class="text-yellow-500 mt-1">✔</span> <span>Berdedikasi mengedepankan kepuasan pelanggan dengan standar kualitas tinggi.</span></li>
                         <li class="flex gap-3 items-start"><span class="text-yellow-500 mt-1">✔</span> <span>Mengedepankan inovasi teknologi untuk solusi konstruksi hardcase yang modern.</span></li>
                         <li class="flex gap-3 items-start"><span class="text-yellow-500 mt-1">✔</span> <span>Mengutamakan ketepatan waktu produksi dan pengiriman sebagai komitmen profesional.</span></li>
-                        <li class="flex gap-3 items-start"><span class="text-yellow-500 mt-1">✔</span> <span>Membangun hubungan jangka panjang yang saling menguntungkan dengan mitra dan pelanggan.</span></li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div id="galeri" class="tab-content py-16">
-            <div class="mb-12 border-b border-gray-800 pb-8">
-                <h2 class="text-4xl font-bold text-white mb-2">Katalog Produk</h2>
-                <p class="text-gray-400">Menampilkan daftar unit standar produksi SLJ Production.</p>
+            <div class="mb-12 border-b border-gray-800 pb-8 flex items-end justify-between">
+                <div>
+                    <h2 class="text-4xl font-extrabold text-white mb-2 italic">KATALOG PRODUK</h2>
+                    <p class="text-gray-400 text-sm">Unit Standar Produksi SLJ Production</p>
+                </div>
+                <div class="text-yellow-500 text-xs font-bold uppercase tracking-widest border border-yellow-500 px-3 py-1 rounded">
+                    Sindangkerta - Bandung Barat
+                </div>
             </div>
             
-            <div id="grid-gambar" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div id="grid-gambar" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
                 </div>
         </div>
 
@@ -85,15 +89,15 @@
 
     <footer class="bg-gray-950 border-t border-gray-800 mt-20">
         <div class="container mx-auto px-6 py-12 text-center text-gray-500 text-sm">
-            <p class="font-bold text-white mb-2 text-base uppercase tracking-widest">CV. SLJ PRODUCTION</p>
-            <p class="mb-6 text-gray-400">Sindangkerta - Bandung Barat</p>
+            <p class="font-extrabold text-white mb-2 text-lg uppercase tracking-[0.3em] italic">SLJ PRODUCTION</p>
+            <p class="mb-6 text-gray-400 font-medium">Sindangkerta - Bandung Barat</p>
             <p>&copy; 2026 SLJ Production. All rights reserved.</p>
-            <p class="text-[10px] mt-4 uppercase tracking-widest opacity-30 italic">Crafted for Professionals</p>
+            <p class="text-[10px] mt-4 uppercase tracking-widest opacity-20 italic">Designed for Professionals</p>
         </div>
     </footer>
 
     <script>
-       const namaProduk = [
+        const namaProduk = [
             "BEAM 100W ISI 4 (54x26x40)", "BEAM 150 ISI 2 (58x55x40)", "BEAM 250W (84x36x56)",
             "FYRO/SPARKULAR (53x35x32)", "HC BEAM 150W ISI 2 (58x28x40)", "HC BEAM 350W (74x37x65)",
             "HC BOX KABEL BESAR", "HC BOX KABEL KECIL (57x47x42)", "HC FRESNEL MINI ISI 4 (41x35x25)",
@@ -118,39 +122,53 @@
         ];
 
         const grid = document.getElementById('grid-gambar');
-        grid.innerHTML = ''; // Membersihkan sisa-sisa error sebelumnya
+        grid.innerHTML = ''; 
 
         namaProduk.forEach((name, index) => {
             const imgName = daftarGambar[index];
             const card = document.createElement('div');
-            card.className = "bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-800 p-4 flex flex-col group hover:border-yellow-600 transition duration-300";
+            card.className = "bg-gray-900/40 rounded-2xl overflow-hidden border border-gray-800 p-4 flex flex-col group hover:border-yellow-600 transition duration-300 backdrop-blur-sm";
             
             card.innerHTML = `
-                <div class="img-container mb-4 relative">
+                <div class="img-container mb-4 relative bg-gray-950">
                     <img src="${imgName}" alt="${name}" loading="lazy" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 flex items-center justify-center -z-10 text-[10px] text-gray-800 uppercase font-bold tracking-widest">SLJ Production</div>
                 </div>
-                <h3 class="text-sm font-bold text-white mb-1 group-hover:text-yellow-500 transition">${name}</h3>
-                <p class="text-[10px] text-gray-600 mb-4 uppercase tracking-tighter">SLJ Production Standard</p>
+                <h3 class="text-xs font-bold text-white mb-1 group-hover:text-yellow-500 transition line-clamp-2 uppercase">${name}</h3>
+                <p class="text-[9px] text-gray-600 mb-4 uppercase tracking-tighter">Premium Quality</p>
                 <a href="https://wa.me/6285864474322?text=Halo%20SLJ%20Production,%20saya%20ingin%20tanya%20harga%20${encodeURIComponent(name)}" 
-                   class="mt-auto w-full bg-yellow-600 text-black py-2 rounded-lg font-bold text-center text-xs hover:bg-yellow-500 transition">
+                   class="mt-auto w-full bg-yellow-600 text-black py-2.5 rounded-xl font-black text-center text-[10px] hover:bg-yellow-500 transition shadow-lg">
                     TANYA HARGA
                 </a>
             `;
             grid.appendChild(card);
         });
 
+        // FUNGSI GANTI TAB SUDAH DIPERBAIKI TOTAL
         function openTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            document.getElementById(tabName).classList.add('active');
-            const btn = document.getElementById('btn-' + tabName);
-            if(btn) btn.classList.add('active');
-            window.scrollTo(0,0);
+            // Sembunyikan semua tab
+            const allTabs = document.querySelectorAll('.tab-content');
+            allTabs.forEach(t => t.classList.remove('active'));
+
+            // Nonaktifkan semua link nav
+            const allLinks = document.querySelectorAll('.nav-link');
+            allLinks.forEach(l => l.classList.remove('active'));
+
+            // Tampilkan tab yang dipilih
+            const targetTab = document.getElementById(tabName);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+
+            // Aktifkan tombol navigasi yang sesuai
+            const targetBtn = document.getElementById('btn-' + tabName);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+
+            // Scroll ke atas otomatis
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
 </html>
-
-
-
-

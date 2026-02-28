@@ -3,105 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIGHTCASE PRO - SLJ Production</title>
+    <title>SLJ PRODUCTION - KATALOG HARDCASE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .tab-content { display: none; }
-        .tab-content.active { display: block; }
-        .nav-link.active { border-bottom: 2px solid #eab308; color: #eab308; }
-        /* Memastikan gambar proporsional di dalam kotak */
-        .img-container {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            overflow: hidden;
-            background-color: #1a1a1a;
-            border-radius: 0.75rem;
-        }
-        .img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+        .nav-link.active { color: #facc15; border-bottom: 2px solid #facc15; }
+        .img-container { aspect-ratio: 1/1; background-color: #1f2937; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 0.75rem; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .img-container:hover img { transform: scale(1.05); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-gray-100 font-sans">
 
-    <header class="sticky top-0 z-50 bg-black/90 border-b border-gray-800 p-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold text-yellow-500">LIGHTCASE PRO</h1>
-            <nav class="flex gap-6">
-                <button onclick="openTab('beranda')" id="btn-beranda" class="nav-link px-2 py-1 transition active">Beranda</button>
-                <button onclick="openTab('galeri')" id="btn-galeri" class="nav-link px-2 py-1 transition">Galeri</button>
-            </nav>
-        </div>
+    <header class="bg-gray-950 sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center font-bold text-black text-xl shadow-[0_0_15px_rgba(250,204,21,0.3)]">SLJ</div>
+                <h1 class="text-2xl font-extrabold tracking-tight text-white">SLJ<span class="text-yellow-500">PRODUCTION</span></h1>
+            </div>
+            <div class="flex items-center gap-6 text-sm font-medium text-gray-400">
+                <button onclick="openTab('beranda')" id="btn-beranda" class="nav-link active py-1 hover:text-white transition">BERANDA</button>
+                <button onclick="openTab('galeri')" id="btn-galeri" class="nav-link py-1 hover:text-white transition">KATALOG</button>
+                <a href="https://wa.me/6285864474322" target="_blank" class="bg-yellow-500 text-black px-4 py-2 rounded-full font-bold text-xs hover:bg-yellow-400 transition shadow-lg">HUBUNGI</a>
+            </div>
+        </nav>
     </header>
 
-    <main class="max-w-6xl mx-auto p-6">
-        <div id="beranda" class="tab-content active text-center py-20">
-            <h2 class="text-5xl font-extrabold mb-4">SLJ PRODUCTION</h2>
-            <p class="text-gray-400 text-lg mb-8">Spesialis Hardcase Custom Berkualitas Tinggi untuk Segala Kebutuhan.</p>
-            <button onclick="openTab('galeri')" class="bg-yellow-500 text-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400">Lihat Produk</button>
+    <main class="container mx-auto px-6 min-h-screen">
+
+        <div id="beranda" class="tab-content active py-16">
+            <div class="text-center mb-20 max-w-3xl mx-auto">
+                <h2 class="text-6xl font-extrabold mb-6 tracking-tighter text-white">Premium Hardcase Manufacturer</h2>
+                <p class="text-xl text-gray-400 leading-relaxed mb-10">
+                    Manufaktur spesialis untuk kebutuhan **Audio & Panggung**. Kami fokus pada perlindungan maksimal, presisi kustomisasi, dan komitmen profesional pada ketepatan waktu.
+                </p>
+                <div class="flex gap-4 justify-center">
+                    <button onclick="openTab('galeri')" class="bg-yellow-500 text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition transform hover:scale-105 shadow-xl">
+                        Lihat Katalog Produk
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-gray-900/40 p-12 rounded-3xl border border-gray-800 shadow-2xl backdrop-blur-sm">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-1 bg-yellow-500 rounded-full"></div>
+                        <h3 class="text-3xl font-bold text-white tracking-tight">VISI KAMI</h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-lg bg-gray-950/80 p-6 rounded-xl border border-gray-800">
+                        Menjadi Perusahaan Pengadaan Hardcase Triplek, Besi, dan Aluminium yang **berkualitas, unggul, dan terpercaya** di Indonesia.
+                    </p>
+                </div>
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-1 bg-yellow-500 rounded-full"></div>
+                        <h3 class="text-3xl font-bold text-white tracking-tight">MISI KAMI</h3>
+                    </div>
+                    <ul class="text-gray-400 space-y-4 text-base">
+                        <li class="flex gap-3 items-start"><span class="text-yellow-500 mt-1">✔</span> <span>Berdedikasi mengedepankan kepuasan pelanggan dengan standar kualitas tinggi.</span></li>
+                        <li class="flex gap-3 items-start"><span class="text-yellow-500 mt-1">✔</span> <span>Mengedepankan inovasi teknologi untuk solusi konstruksi hardcase yang modern.</span></li>
+                        <li class="flex gap-3 items-start"><span class="text-yellow-500 mt-1">✔</span> <span>Mengutamakan ketepatan waktu produksi dan pengiriman sebagai komitmen profesional.</span></li>
+                        <li class="flex gap-3 items-start"><span class="text-yellow-500 mt-1">✔</span> <span>Membangun hubungan jangka panjang yang saling menguntungkan dengan mitra dan pelanggan.</span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <div id="galeri" class="tab-content">
-            <div class="mb-10 text-center">
-                <h2 class="text-3xl font-bold mb-2">Galeri Produksi</h2>
-                <p class="text-gray-400 text-sm">Menampilkan hasil produksi terbaru dari workshop kami.</p>
+        <div id="galeri" class="tab-content py-16">
+            <div class="mb-12 border-b border-gray-800 pb-8">
+                <h2 class="text-4xl font-bold text-white mb-2">Katalog Produk</h2>
+                <p class="text-gray-400">Menampilkan daftar unit standar produksi SLJ Production.</p>
             </div>
             
-            <div id="grid-gambar" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="grid-gambar" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 </div>
         </div>
+
     </main>
 
-    <footer class="max-w-md mx-auto my-10 p-6 bg-gray-900 border border-yellow-500 rounded-2xl text-center shadow-2xl">
-        <h3 class="text-xl font-bold text-white">SLJ PRODUCTION</h3>
-        <p class="text-yellow-500 text-sm mb-4">Premium Hardcase Manufacturer</p>
-        <a href="https://wa.me/6285864474322" class="block bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-bold transition">
-            Hubungi WhatsApp
-        </a>
+    <footer class="bg-gray-950 border-t border-gray-800 mt-20">
+        <div class="container mx-auto px-6 py-12 text-center text-gray-500 text-sm">
+            <p class="font-bold text-white mb-2 text-base uppercase tracking-widest">CV. SLJ PRODUCTION</p>
+            <p class="mb-6 text-gray-400">Sindangkerta - Bandung Barat</p>
+            <p>&copy; 2026 SLJ Production. All rights reserved.</p>
+            <p class="text-[10px] mt-4 uppercase tracking-widest opacity-30 italic">Crafted for Professionals</p>
+        </div>
     </footer>
 
     <script>
-        // DAFTAR NAMA FILE DISESUAIKAN PERSIS DENGAN GITHUB ANDA
-        const daftarGambar = [
-            "SLJ PRO +62 858-6447-4322 (7).png",
-            "SLJ PRODUCTION +62 858-6447-4322 (1).png",
-            "SLJ PRODUCTION +62 858-6447-4322 (2).png",
-            "SLJ PRODUCTION +62 858-6447-4322 (4).png",
-            "SLJ PRODUCTION +62 858-6447-4322 (5).png",
-            "Teks paragraf Anda (1).png",
-            "WhatsApp Image 2026-02-19 at 14.07.41.jpeg",
-            "WhatsApp Image 2026-02-19 at 14.07.43 (1).jpeg",
-            "WhatsApp Image 2026-02-19 at 14.07.43.jpeg",
-            "WhatsApp Image 2026-02-19 at 15.20.38 (3).jpeg",
-            "WhatsApp Image 2026-02-19 at 15.20.40.jpeg",
-            "WhatsApp Image 2026-02-19 at 15.34.46.jpeg",
-            "WhatsApp Image 2026-02-20 at 05.10.44 (1).jpeg",
-            "WhatsApp Image 2026-02-20 at 05.10.44.jpeg",
-            "WhatsApp Image 2026-02-20 at 05.10.45 (1).jpeg",
-            "WhatsApp Image 2026-02-20 at 05.10.45.jpeg",
-            "WhatsApp Image 2026-02-22 at 16.29.26 (1).jpeg",
-            "WhatsApp Image 2026-02-22 at 16.29.26.jpeg",
-            "WhatsApp Image 2026-02-22 at 16.29.27.jpeg",
-            "WhatsApp Image 2026-02-22 at 16.31.32 (1).jpeg",
-            "WhatsApp Image 2026-02-22 at 16.31.32.jpeg",
-            "WhatsApp Image 2026-02-22 at 16.31.33 (2).jpeg"
+        const namaProduk = [
+            "BEAM 100W ISI 4 (54x26x40)", "BEAM 150 ISI 2 (58x55x40)", "BEAM 250W (84x36x56)",
+            "FYRO/SPARKULAR (53x35x32)", "HC BEAM 150W ISI 2 (58x28x40)", "HC BEAM 350W (74x37x65)",
+            "HC BOX KABEL BESAR", "HC BOX KABEL KECIL (57x47x42)", "HC FRESNEL MINI ISI 4 (41x35x25)",
+            "HC MIXER CROCODILE (51x32x14)", "HC MIXER KINGKONG (51x25x14)", "HC PARLED ISI 6 (79x53x39)",
+            "HC PARLED ISI 8 (105x53x39)", "HC STROBO ISI 6 BIG (97x50x30)", "HC STROBO ISI 6 SLIM (79x53x39)",
+            "MINI BRUTE ISI 4 (79x53x39)", "STROBO ISI 8 (1/2 12) (99x55x30)", "STROBO ISI 8 BIG (99x65x30)",
+            "STROBO ISI 8 SLIM", "STROMY ISI 8 (14CM) (87x61x30)", "WALL WASHER ISI 8 (105x45x30)", "CUSTOM FLIGHTCASE SLJ"
         ];
+
+        // Daftar nama file sementara
+        const daftarGambar = namaProduk.map((_, i) => `${i + 1}.jpg`);
 
         const grid = document.getElementById('grid-gambar');
 
-        daftarGambar.forEach((imgName, index) => {
+        namaProduk.forEach((name, index) => {
+            const imgName = daftarGambar[index];
             const card = document.createElement('div');
-            card.className = "bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-800 p-4 flex flex-col items-center";
+            card.className = "bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-800 p-4 flex flex-col group hover:border-yellow-600 transition duration-300";
+            
             card.innerHTML = `
-                <div class="img-container mb-4">
-                    <img src="${imgName}" alt="Produk SLJ" loading="lazy">
+                <div class="img-container mb-4 relative">
+                    <img src="${imgName}" alt="${name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\"text-[10px] text-gray-700 uppercase\">Menunggu Foto</div>'">
                 </div>
-                <p class="text-sm font-semibold text-gray-300 mb-3">Unit Hardcase #${index + 1}</p>
-                <a href="https://wa.me/6285864474322?text=Halo%20SLJ%20Production,%20saya%20tanya%20harga%20produk%20nomor%20${index + 1}" 
-                   class="w-full bg-yellow-500 text-black py-2 rounded-lg font-bold text-center text-sm hover:bg-yellow-400 transition">
-                    Tanya Harga
+                <h3 class="text-sm font-bold text-white mb-1 group-hover:text-yellow-500 transition">${name}</h3>
+                <p class="text-[10px] text-gray-600 mb-4 uppercase tracking-tighter">SLJ Production Standard</p>
+                <a href="https://wa.me/6285864474322?text=Halo%20SLJ%20Production,%20saya%20ingin%20tanya%20harga%20${encodeURIComponent(name)}" 
+                   class="mt-auto w-full bg-yellow-600 text-black py-2 rounded-lg font-bold text-center text-xs hover:bg-yellow-500 transition">
+                    TANYA HARGA
                 </a>
             `;
             grid.appendChild(card);
@@ -111,7 +131,8 @@
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
             document.getElementById(tabName).classList.add('active');
-            document.getElementById('btn-' + tabName).classList.add('active');
+            const btn = document.getElementById('btn-' + tabName);
+            if(btn) btn.classList.add('active');
             window.scrollTo(0,0);
         }
     </script>

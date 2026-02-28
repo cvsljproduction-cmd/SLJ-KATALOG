@@ -104,37 +104,49 @@
         ];
 
         const daftarGambar = [
-            "SLJ PRO +62 858 6447 4322 (7).png",
-            "SLJ PRODUCTION +62 858-6447-4322 (1).png",
-            "SLJ PRODUCTION +62 858-6447-4322 (2).png",
-            "SLJ PRODUCTION +62 858-6447-4322 (4).png",
-            "SLJ PRODUCTION +62 858-6447-4322 (5).png",
-            "Teks paragraf Anda (1).png",
-            "WhatsApp Image 2026-02-19 at 14.07.41.jpeg",
-            "WhatsApp Image 2026-02-19 at 14.07.43 (1).jpeg",
-            "WhatsApp Image 2026-02-19 at 14.07.43.jpeg",
-            "WhatsApp Image 2026-02-19 at 15.20.38 (3).jpeg",
-            "WhatsApp Image 2026-02-19 at 15.20.40.jpeg",
-            "WhatsApp Image 2026-02-19 at 15.34.46.jpeg",
-            "WhatsApp Image 2026-02-20 at 05.10.44 (1).jpeg",
-            "WhatsApp Image 2026-02-20 at 05.10.44.jpeg",
-            "WhatsApp Image 2026-02-20 at 05.10.45 (1).jpeg",
-            "WhatsApp Image 2026-02-20 at 05.10.45.jpeg",
-            "WhatsApp Image 2026-02-22 at 16.29.26 (1).jpeg",
-            "WhatsApp Image 2026-02-22 at 16.29.26.jpeg",
-            "WhatsApp Image 2026-02-22 at 16.29.27.jpeg",
-            "WhatsApp Image 2026-02-22 at 16.31.32 (1).jpeg",
-            "WhatsApp Image 2026-02-22 at 16.31.32.jpeg",
-            "WhatsApp Image 2026-02-22 at 16.31.33 (2).jpeg"
+            "SLJ PRO +62 858 6447 4322 (7).png", "SLJ PRODUCTION +62 858-6447-4322 (1).png",
+            "SLJ PRODUCTION +62 858-6447-4322 (2).png", "SLJ PRODUCTION +62 858-6447-4322 (4).png",
+            "SLJ PRODUCTION +62 858-6447-4322 (5).png", "Teks paragraf Anda (1).png",
+            "WhatsApp Image 2026-02-19 at 14.07.41.jpeg", "WhatsApp Image 2026-02-19 at 14.07.43 (1).jpeg",
+            "WhatsApp Image 2026-02-19 at 14.07.43.jpeg", "WhatsApp Image 2026-02-19 at 15.20.38 (3).jpeg",
+            "WhatsApp Image 2026-02-19 at 15.20.40.jpeg", "WhatsApp Image 2026-02-19 at 15.34.46.jpeg",
+            "WhatsApp Image 2026-02-20 at 05.10.44 (1).jpeg", "WhatsApp Image 2026-02-20 at 05.10.44.jpeg",
+            "WhatsApp Image 2026-02-20 at 05.10.45 (1).jpeg", "WhatsApp Image 2026-02-20 at 05.10.45.jpeg",
+            "WhatsApp Image 2026-02-22 at 16.29.26 (1).jpeg", "WhatsApp Image 2026-02-22 at 16.29.26.jpeg",
+            "WhatsApp Image 2026-02-22 at 16.29.27.jpeg", "WhatsApp Image 2026-02-22 at 16.31.32 (1).jpeg",
+            "WhatsApp Image 2026-02-22 at 16.31.32.jpeg", "WhatsApp Image 2026-02-22 at 16.31.33 (2).jpeg"
         ];
 
         const grid = document.getElementById('grid-gambar');
+        grid.innerHTML = ''; // Membersihkan sisa-sisa error sebelumnya
 
         namaProduk.forEach((name, index) => {
             const imgName = daftarGambar[index];
             const card = document.createElement('div');
             card.className = "bg-gray-900/50 rounded-2xl overflow-hidden border border-gray-800 p-4 flex flex-col group hover:border-yellow-600 transition duration-300";
             
+            card.innerHTML = `
+                <div class="img-container mb-4 relative">
+                    <img src="${imgName}" alt="${name}" loading="lazy" onerror="this.style.display='none'">
+                </div>
+                <h3 class="text-sm font-bold text-white mb-1 group-hover:text-yellow-500 transition">${name}</h3>
+                <p class="text-[10px] text-gray-600 mb-4 uppercase tracking-tighter">SLJ Production Standard</p>
+                <a href="https://wa.me/6285864474322?text=Halo%20SLJ%20Production,%20saya%20ingin%20tanya%20harga%20${encodeURIComponent(name)}" 
+                   class="mt-auto w-full bg-yellow-600 text-black py-2 rounded-lg font-bold text-center text-xs hover:bg-yellow-500 transition">
+                    TANYA HARGA
+                </a>
+            `;
+            grid.appendChild(card);
+        });
+
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            const btn = document.getElementById('btn-' + tabName);
+            if(btn) btn.classList.add('active');
+            window.scrollTo(0,0);
+        }
             card.innerHTML = `
                 <div class="img-container mb-4 relative">
                     <img src="${imgName}" alt="${name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\"text-[10px] text-gray-700 uppercase\">Menunggu Foto</div>'">
@@ -160,5 +172,6 @@
     </script>
 </body>
 </html>
+
 
 

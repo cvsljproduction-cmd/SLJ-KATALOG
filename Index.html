@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LightCase Pro - Premium Hardcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; background: #0a0a0a; color: white; scroll-behavior: smooth; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .nav-link.active { color: #facc15; border-bottom: 2px solid #facc15; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-yellow-500/20">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-800 text-yellow-500 tracking-tighter">LIGHTCASE PRO</h1>
+            <div class="flex gap-6">
+                <button onclick="openTab('beranda')" id="btn-beranda" class="nav-link active font-bold py-1">Beranda</button>
+                <button onclick="openTab('galeri')" id="btn-galeri" class="nav-link font-bold py-1">Galeri</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="beranda" class="tab-content active pt-24">
+        <section class="max-w-7xl mx-auto px-6 py-20 text-center">
+            <h2 class="text-6xl font-800 mb-6 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent leading-tight">
+                PROTEKSI TERBAIK <br> UNTUK LIGHTING ANDA
+            </h2>
+            <p class="text-gray-400 text-xl mb-10 max-w-2xl mx-auto">
+                Custom Hardcase kualitas premium buatan SLJ Production. Didesain khusus untuk keamanan maksimal alat profesional Anda.
+            </p>
+            <div class="flex justify-center gap-4">
+                <button onclick="openTab('galeri')" class="bg-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition">
+                    Lihat Koleksi
+                </button>
+                <a href="https://wa.me/6285864474322" class="border border-yellow-500 text-yellow-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-500/10 transition">
+                    Hubungi Kami
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <div id="galeri" class="tab-content pt-24">
+        <section class="max-w-7xl mx-auto px-6 py-10">
+            <div class="mb-12">
+                <h2 class="text-4xl font-bold mb-2">Galeri Produksi</h2>
+                <p class="text-gray-400 text-sm">Menampilkan hasil produksi terbaru dari workshop kami.</p>
+            </div>
+            
+            <div id="grid-gambar" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+        </section>
+    </div>
+
+    <script>
+        // DAFTAR NAMA FILE DISESUAIKAN PERSIS DENGAN SCREENSHOT FOLDER ANDA
+        const daftarGambar = [
+            "SLJ PRO +62 858-6447-4322 (7).jpg",
+            "SLJ PRODUCTION +62 858-6447-4322 (5).jpg",
+            "SLJ PRODUCTION +62 858-6447-4322 (6).jpg",
+            "SLJ PRODUCTION +62 858-6447-4322.jpg",
+            "SLJ PRODUCTION +62 858-6447-4322 (1).jpg",
+            "WhatsApp Image 2026-02-19 at 14.07.41.jpeg",
+            "WhatsApp Image 2026-02-19 at 14.07.43 (1).jpeg",
+            "WhatsApp Image 2026-02-19 at 14.07.43.jpeg",
+            "WhatsApp Image 2026-02-19 at 15.20.38 (3).jpeg",
+            "WhatsApp Image 2026-02-19 at 15.20.40.jpeg",
+            "WhatsApp Image 2026-02-19 at 15.34.46.jpeg",
+            "WhatsApp Image 2026-02-20 at 05.10.44 (1).jpeg",
+            "WhatsApp Image 2026-02-20 at 05.10.44.jpeg",
+            "WhatsApp Image 2026-02-20 at 05.10.45 (1).jpeg",
+            "WhatsApp Image 2026-02-20 at 05.10.45.jpeg",
+            "WhatsApp Image 2026-02-22 at 16.29.26 (1).jpeg",
+            "WhatsApp Image 2026-02-22 at 16.29.26.jpeg",
+            "WhatsApp Image 2026-02-22 at 16.29.27.jpeg",
+            "WhatsApp Image 2026-02-22 at 16.31.32 (1).jpeg",
+            "WhatsApp Image 2026-02-22 at 16.31.32.jpeg",
+            "WhatsApp Image 2026-02-22 at 16.31.33 (2).jpeg"
+        ];
+
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            document.getElementById('btn-' + tabName).classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        const grid = document.getElementById('grid-gambar');
+        daftarGambar.forEach((file, i) => {
+            grid.innerHTML += `
+                <div class="bg-gray-900/80 rounded-3xl border border-gray-800 overflow-hidden shadow-2xl group">
+                    <div class="h-64 flex items-center justify-center bg-black/40 overflow-hidden p-2">
+                        <img src="${file}" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500" 
+                             onerror="this.parentElement.innerHTML='<div class=\"p-4 text-center text-red-500 text-xs\">Gagal Memuat:<br>${file}</div>'">
+                    </div>
+                    <div class="p-6 border-t border-gray-800">
+                        <h3 class="font-bold text-white mb-4 text-center">Unit Hardcase #${i+1}</h3>
+                        <a href="https://wa.me/6285864474322?text=Halo%20SLJ%2C%20saya%20tanya%20harga%20unit%20ke-${i+1}" 
+                           class="block w-full text-center bg-yellow-500 text-black py-3 rounded-2xl font-bold hover:bg-yellow-400 transition shadow-lg">
+                           Tanya Harga
+                        </a>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

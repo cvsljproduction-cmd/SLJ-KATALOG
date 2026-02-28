@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Hardcase SLJ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0a0a0a; color: white; font-family: sans-serif; }
+        .card { background: #111; border: 1px solid #333; border-radius: 15px; overflow: hidden; }
+    </style>
+</head>
+<body class="p-8">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold text-yellow-500 text-center mb-8">GALERI PRODUKSI SLJ</h1>
+        <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+
+    <script>
+        // DAFTAR INI SAYA KETIK ULANG PERSIS SESUAI FOTO FOLDER KAMU
+        const daftarGambar = [
+            "SLJ PRO +62 858-6447-4322 (7).jpg",
+            "SLJ PRODUCTION +62 858-6447-4322 (5).jpg",
+            "SLJ PRODUCTION +62 858-6447-4322 (6).jpg",
+            "SLJ PRODUCTION +62 858-6447-4322.jpg",
+            "SLJ PRODUCTION +62 858-6447-4322 (1).jpg",
+            "WhatsApp Image 2026-02-19 at 14.07.41.jpeg",
+            "WhatsApp Image 2026-02-19 at 14.07.43 (1).jpeg",
+            "WhatsApp Image 2026-02-19 at 14.07.43.jpeg",
+            "WhatsApp Image 2026-02-19 at 15.20.38 (3).jpeg",
+            "WhatsApp Image 2026-02-19 at 15.20.40.jpeg",
+            "WhatsApp Image 2026-02-19 at 15.34.46.jpeg",
+            "WhatsApp Image 2026-02-20 at 05.10.44 (1).jpeg",
+            "WhatsApp Image 2026-02-20 at 05.10.44.jpeg",
+            "WhatsApp Image 2026-02-20 at 05.10.45 (1).jpeg",
+            "WhatsApp Image 2026-02-20 at 05.10.45.jpeg",
+            "WhatsApp Image 2026-02-22 at 16.29.26 (1).jpeg",
+            "WhatsApp Image 2026-02-22 at 16.29.26.jpeg",
+            "WhatsApp Image 2026-02-22 at 16.29.27.jpeg",
+            "WhatsApp Image 2026-02-22 at 16.31.32 (1).jpeg",
+            "WhatsApp Image 2026-02-22 at 16.31.32.jpeg",
+            "WhatsApp Image 2026-02-22 at 16.31.33 (2).jpeg"
+        ];
+
+        const container = document.getElementById('grid');
+        daftarGambar.forEach((file, i) => {
+            container.innerHTML += `
+                <div class="card">
+                    <div class="h-64 flex items-center justify-center bg-black">
+                        <img src="${file}" class="max-w-full max-h-full object-contain" onerror="this.after('Cek Nama File: ${file}')">
+                    </div>
+                    <div class="p-4 border-t border-gray-800 text-center">
+                        <p class="text-sm font-bold mb-3 text-gray-300">Unit Hardcase #${i+1}</p>
+                        <a href="https://wa.me/6285864474322" class="inline-block bg-yellow-500 text-black px-6 py-2 rounded-full font-bold text-sm">Pesan Sekarang</a>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
